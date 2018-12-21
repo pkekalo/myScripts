@@ -84,4 +84,4 @@ test1.magicalDamageCalculator(2);
 //returns "600 magical damage...";
 
 test1.withMagicalResistDamage(2);
-//returns "450 magical damage...";
+//returns "450 clear damage...";
