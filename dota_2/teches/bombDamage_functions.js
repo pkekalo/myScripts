@@ -48,6 +48,8 @@ var withMagicalResist = function (magicalDamage, magicalResistancePercent) {
     return  damage + " clear damage..."; 
 }
 
+//Create Spell Amplification function 
+
 
 //How it works...
 
