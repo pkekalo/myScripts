@@ -11,7 +11,6 @@ class MinerUlt {
 		this.eachMineDamage = 0;
 		this.magicalResistancePercent = 0;
 	} 
-
 	magicalDamageCalculator(mines, callback, magicalResistancePercent) {
 		this.changeNumberOfMines(mines);
 		this.changeMagicalDamage();
@@ -85,3 +84,9 @@ test1.magicalDamageCalculator(2);
 
 test1.withMagicalResistDamage(2);
 //returns "450 clear damage...";
+
+//Bugs: 
+
+// expected to work with callback, but it does not work yet in my expected scope 
+// In my case callback is undefined, I will fix it later when I detect th problem
+test1.withMagicalResistDamage(2, this.withMagicalResistDamage, 25);
