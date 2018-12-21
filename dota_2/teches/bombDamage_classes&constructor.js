@@ -71,7 +71,7 @@ class MinerUlt3 extends MinerUlt {
 class MinerUlt4 extends MinerUlt {
 	constructor() {
 		super();
-		this.eachMineDamage =  700;	
+		this.eachMineDamage =  750;	
 	}
 }
 
