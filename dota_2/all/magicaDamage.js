@@ -1,4 +1,4 @@
-var withMagicalResist = function (magicalDamage, magicalResistancePercent) {
+var magicalResistCalculator = function (magicalDamage, magicalResistancePercent) {
     let clearDamage = magicalDamage * (1 - magicalResistancePercent/100);
     let damage = clearDamage;
     return  damage + " clear damage..."; 
