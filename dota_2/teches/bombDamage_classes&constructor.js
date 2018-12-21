@@ -9,14 +9,15 @@ class MinerUlt {
 		this.magicalDamage = 0;
 		this.clearDamage = 0;
 		this.eachMineDamage = 0;
+		this.magicalResistancePercent = 0;
 	} 
 
 	magicalDamageCalculator(mines, callback, magicalResistancePercent) {
 		this.changeNumberOfMines(mines);
+		this.changeMagicalDamage();
 		if (typeof callback === "function") {
-    		return callback(this.magicalDamage, magicalResistancePercent);
+    		return callback(magicalResistancePercent);
     	} else {
-    		this.magicalDamage = this.numberOfMines * this.eachMineDamage;
     		return this.magicalDamage + " magical damage...";
     	}
 	}
@@ -25,8 +26,21 @@ class MinerUlt {
 		this.numberOfMines = num;
 	}
 
-	withMagicalResistDamage(magical, magicalResistancePercent) {
-		this.clearDamage = magical * (1 - magicalResistancePercent/100);
+	changeMagicalDamage() {
+		this.magicalDamage = this.numberOfMines * this.eachMineDamage;
+	}
+
+	changeMagicalResistancePercent(num) {
+		this.magicalResistancePercent = num;
+	}
+
+	changeClearDamage() {
+		this.clearDamage = this.magicalDamage * (1 - this.magicalResistancePercent/100);
+	}
+
+	withMagicalResistDamage(percent) {
+		this.changeMagicalResistancePercent(percent);
+		this.changeClearDamage();
 		return  this.clearDamage + " clear damage..."; 
 	}
 }
